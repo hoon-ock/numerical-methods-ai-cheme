@@ -1,0 +1,32 @@
+# pip mirror of environment.yml, used by CI (.github/workflows/deploy.yml).
+# Keep in sync with environment.yml when adding dependencies.
+
+# book toolchain
+jupyter-book>=1.0,<2
+sphinxcontrib-bibtex
+sphinx-exercise
+ghp-import
+
+# authoring
+jupyterlab
+ipywidgets
+ipykernel
+
+# numerics
+numpy
+scipy
+sympy
+pandas
+matplotlib
+seaborn
+statsmodels
+lmfit
+
+# AI / ML
+scikit-learn
+torch
+
+# chemical engineering
+cantera
+rdkit
+py3Dmol

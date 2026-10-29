@@ -1,0 +1,47 @@
+# Conda environment for "Numerical Methods and AI Modeling for Chemical Engineers"
+#
+#   conda env create -f environment.yml
+#   conda activate numerical-methods
+#
+# Python is pinned to 3.12: Jupyter Book 1.x pins older Sphinx releases that are
+# not reliable on Python 3.13.
+name: numerical-methods
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+
+  # --- book toolchain ---
+  - jupyter-book>=1.0,<2
+  - sphinxcontrib-bibtex
+  - sphinx-exercise
+  - ghp-import
+
+  # --- authoring ---
+  - jupyterlab
+  - ipywidgets
+  - ipykernel
+
+  # --- numerics ---
+  - numpy
+  - scipy
+  - sympy
+  - pandas
+  - matplotlib
+  - seaborn
+  - statsmodels
+  - lmfit
+
+  # --- AI / ML ---
+  - scikit-learn
+
+  # --- chemical engineering ---
+  - cantera
+
+  - pip
+  - pip:
+      # CPU wheels; conda-forge's pytorch build is heavier than we need here.
+      - torch
+      # Molecular visualization for the plotting chapter.
+      - rdkit
+      - py3Dmol

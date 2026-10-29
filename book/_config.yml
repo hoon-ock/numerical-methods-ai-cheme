@@ -1,0 +1,84 @@
+# Jupyter Book 1.x configuration
+# Reference: https://jupyterbook.org/en/stable/customize/config.html
+
+title: Numerical Methods and AI Modeling for Chemical Engineers
+author: Janghoon Ock
+copyright: "2026"
+logo: ""
+
+# Don't fail the build just because a notebook isn't in the TOC yet.
+only_build_toc_files: true
+
+#######################################################################################
+# Notebook execution
+#
+# "cache" re-runs a notebook only when its source changes. This matters once the
+# AI/ML chapters arrive — a full `force` rebuild would retrain models on every build.
+# Use `jupyter-book build --all book/` to force a clean re-execution.
+execute:
+  execute_notebooks: cache
+  timeout: 300
+  allow_errors: false
+  exclude_patterns:
+    - "*-solutions.ipynb"
+
+#######################################################################################
+# MyST markdown extensions
+parse:
+  myst_enable_extensions:
+    - amsmath          # \begin{align} ... \end{align}
+    - dollarmath       # $...$ and $$...$$
+    - colon_fence      # ::: fences, easier to type than ``` in markdown cells
+    - deflist          # definition lists for symbol/nomenclature tables
+    - linkify          # bare URLs become links
+    - substitution
+    - html_image
+
+#######################################################################################
+# Bibliography
+bibtex_bibfiles:
+  - references.bib
+
+sphinx:
+  extra_extensions:
+    - sphinxcontrib.bibtex
+    - sphinx_exercise
+  config:
+    bibtex_reference_style: author_year
+    mathjax3_config:
+      tex:
+        macros:
+          # Shorthands used throughout the course. Add sparingly.
+          dd: ["\\frac{d #1}{d #2}", 2]
+          pd: ["\\frac{\\partial #1}{\\partial #2}", 2]
+
+#######################################################################################
+# HTML output
+html:
+  use_issues_button: false
+  use_repository_button: true
+  use_edit_page_button: false
+  home_page_in_navbar: true
+
+# Interactive launch buttons so students can run notebooks without a local install.
+# `binderhub_url` / Colab both need `repository.url` below to point at a real,
+# public GitHub repo. Until then these buttons render but won't resolve.
+launch_buttons:
+  notebook_interface: classic
+  colab_url: "https://colab.research.google.com"
+  thebe: false
+
+# Feeds the repository button, the Colab launch buttons, and the Pages workflow.
+# NOTE: Colab cannot read a private repo, so the launch buttons will 404 until
+# this repository is made public. They need no change when that happens.
+repository:
+  url: https://github.com/hoon-ock/numerical-methods-ai-cheme
+  path_to_book: book
+  branch: main
+
+#######################################################################################
+# PDF output via LaTeX (`jupyter-book build book/ --builder pdflatex`)
+latex:
+  latex_engine: pdflatex
+  latex_documents:
+    targetname: numerical-methods-cheme.tex

@@ -1,0 +1,95 @@
+{
+  "cmu_06-262": {
+    "url": "https://github.com/ulissigroup/math-methods-chemical-engineering",
+    "local_clone": "_refs/courses/math-methods-chemical-engineering",
+    "title": "06-262 Math Methods in Chemical Engineering",
+    "institution": "Carnegie Mellon University",
+    "instructor": "Zachary Ulissi (with Katie Whitehead, John Kitchin, Lynn Walker)",
+    "level": "sophomore",
+    "format": "Jupyter notebook lecture notes; conda env via myenv.yml (not a Jupyter Book)",
+    "license": "CC-BY-4.0",
+    "topics": [
+      "linear algebra",
+      "ordinary differential equations",
+      "partial differential equations",
+      "numerical methods",
+      "statistics"
+    ],
+    "has_ml": false,
+    "relevance": "Mathematical foundation, pitched 1-2 years below our audience. Useful for topic sequencing; its linear algebra and ODE material is review for juniors/seniors."
+  },
+
+  "cmu_06-325": {
+    "url": "https://github.com/ulissigroup/F22-06-325",
+    "local_clone": "_refs/courses/F22-06-325",
+    "title": "06-325 Numerical Methods and ML for Chemical Engineering (Fall 2022)",
+    "institution": "Carnegie Mellon University",
+    "instructor": "Zachary Ulissi",
+    "level": "junior/senior undergraduate",
+    "format": "Jupyter Book 1.x (f22-06-325/_config.yml + _toc.yml), Docker, pre-commit, GitHub Actions",
+    "license": "CC-BY-4.0",
+    "structure": {
+      "numerical_recap": ["ODE integration with events", "local optimization and curve fitting"],
+      "ml_module": [
+        "intro to supervised learning",
+        "model capacity, overfitting, regularization, ridge/LASSO",
+        "linear models for classification (logistic regression)",
+        "validation and test splits",
+        "non-parametric models",
+        "featurizing molecules and materials (descriptors)",
+        "neural networks",
+        "dimensionality reduction / unsupervised learning",
+        "Bayesian optimization / active learning for design of experiments"
+      ],
+      "projects": ["wildfire dataset", "catalyst simulation", "travelling salesman"],
+      "homeworks": "HW1-HW5 plus solutions"
+    },
+    "has_ml": true,
+    "relevance": "CLOSEST MATCH to the target course: same title concept, same level, and the only reference with a developed ML module. Treat its ML sequence as the model for the AI half of this book.",
+    "caution": "Repo is 817 MB; 373 MB is .git history and the rest is project datasets. Cloned shallow (--depth 1). Do not vendor its data directories."
+  },
+
+  "ock_chme212": {
+    "url": "https://github.com/ock-group/CHME212-2026-Spring",
+    "local_clone": "_refs/courses/CHME212-2026-Spring",
+    "title": "CHME 212 Scientific Computing (Spring 2026)",
+    "instructor": "Janghoon Ock (ock-group)",
+    "level": "undergraduate; assumes no programming beyond first-year ChemE",
+    "format": "Jupyter Book 1.x (_config.yml + _toc.yml), content under docs/",
+    "license": "CC-BY-4.0",
+    "structure": {
+      "basic_python": [
+        "ch00 intro to Python & Jupyter",
+        "ch01 basic Python math",
+        "ch02 strings",
+        "ch03 boolean logic",
+        "ch04 collections: lists/tuples/dicts",
+        "ch05 control flow",
+        "ch06 file I/O",
+        "ch07 functions/modules/packages",
+        "ch08 programming practices",
+        "ch09 plotting & visualization"
+      ],
+      "numerical_computation": [
+        "ch10 basic array methods",
+        "ch11 linear algebra & matrices (+ matrix rank supplement)",
+        "ch12 polynomial fitting & interpolation",
+        "ch13 statistics, random sampling, distributions",
+        "ch14 Monte Carlo simulation",
+        "ch15 numerical integration and differentiation",
+        "ch16 root finding & Newton's method",
+        "ch17 symbolic mathematics with SymPy",
+        "ch18 ordinary differential equations"
+      ],
+      "planned_but_commented_out": [
+        "ch19 image analysis for particle/phase characterization",
+        "ch20 cheminformatics with RDKit",
+        "ch21 simulation: Brownian motion / diffusion / random walks"
+      ],
+      "labs": "lab01-lab11, paired to the chapter sequence"
+    },
+    "has_ml": false,
+    "relevance": "The author's own prior course and the direct predecessor. Owns the numerical spine (ch10-18) and all lab infrastructure. Its README promises machine learning but no ML chapter exists yet - that gap is precisely what the new book fills.",
+    "notes": "19 chapters + 11 labs already written. Reuse, don't rewrite. Chapters 00-09 are introductory programming and are likely below the junior/senior target level."
+  }
+}

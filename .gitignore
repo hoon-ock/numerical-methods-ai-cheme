@@ -1,0 +1,23 @@
+# Jupyter Book build output
+book/_build/
+
+# Reference materials: textbooks, papers, and borrowed course notebooks.
+# Deliberately NOT tracked — these are usually copyrighted and must not enter
+# git history. Only the explanatory README is committed.
+_refs/*
+!_refs/README.md
+# The curated source index is our own authored metadata, not borrowed material.
+!_refs/web_sources.json
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# macOS
+.DS_Store

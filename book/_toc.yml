@@ -1,0 +1,68 @@
+# Jupyter Book table of contents
+# Reference: https://jupyterbook.org/en/stable/structure/toc.html
+#
+# Entries are extensionless, so a chapter can be promoted from a .md outline stub
+# to a .ipynb notebook without editing this file.
+#
+# Status: Chapter 10 is written. Everything else is an outline stub -- H1 plus
+# section headings, with per-section source provenance in MyST `%` comments
+# (visible in the file, absent from the build).
+format: jb-book
+root: intro
+
+parts:
+  # Caption-less leading part: jb-book forbids a root-level `chapters` list
+  # alongside `parts`, so the standalone opening chapter lives here.
+  - chapters:
+      - file: chapters/01-numerical-methods-in-cheme
+
+  - caption: "Part I — Python for Chemical Engineers"
+    chapters:
+      - file: chapters/02-python-jupyter-environment
+      - file: chapters/03-numbers-variables-arithmetic
+      - file: chapters/04-text-and-logic
+      - file: chapters/05-collections
+      - file: chapters/06-control-flow
+      - file: chapters/07-files-and-io
+      - file: chapters/08-functions-and-modules
+      - file: chapters/09-plotting
+
+  - caption: "Part II — Numerical Methods"
+    chapters:
+      - file: chapters/10-arrays-and-vectorization
+      - file: chapters/11-linear-systems
+      - file: chapters/12-eigenvalues
+      - file: chapters/13-roots
+      - file: chapters/14-differentiation-integration
+      - file: chapters/15-odes
+      - file: chapters/16-statistics
+      - file: chapters/17-curve-fitting
+      - file: chapters/18-optimization
+
+  - caption: "Part III — From Curve Fitting to Machine Learning"
+    chapters:
+      - file: chapters/19-curve-fitting-to-ml
+      - file: chapters/20-generalization
+      - file: chapters/21-capacity-regularization
+
+  - caption: "Part IV — Lab Exercises"
+    chapters:
+      - file: labs/01-python-fundamentals
+      - file: labs/02-text-and-logic
+      - file: labs/03-control-flow
+      - file: labs/04-files-and-functions
+      - file: labs/05-plotting
+      - file: labs/06-arrays-and-linear-algebra
+      - file: labs/07-eigenvalues
+      - file: labs/08-root-finding
+      - file: labs/09-differentiation-integration
+      - file: labs/10-odes
+      - file: labs/11-statistics-and-error-propagation
+      - file: labs/12-curve-fitting
+      - file: labs/13-optimization
+      - file: labs/14-train-test-regularization
+
+  - caption: Appendices
+    chapters:
+      - file: appendix/setup
+      - file: appendix/bibliography
